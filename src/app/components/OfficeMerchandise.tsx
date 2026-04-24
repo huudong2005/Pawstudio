@@ -1,20 +1,20 @@
 import { motion } from "motion/react";
 import { useNavigate } from "react-router";
 import { ArrowLeft, Sparkles } from "lucide-react";
-import idCardImg from "../../imports/ID_CARD_(Office_Merchandise).png";
-import idCardFontImg from "../../imports/ID_CARD_font_(Office_Merchandise).png";
-import letterImg from "../../imports/LETTER_(Office_Merchandise).png";
-import cdImg from "../../imports/cd_(Office_Merchandise).png";
-import folderImg from "../../imports/folder_(Office_Merchandise).png";
-import businessCardImg from "../../imports/Business__Card_(Office_Merchandise).png";
+import image7 from "../../imports/image-7.png";
+import image8 from "../../imports/image-8.png";
+import image9 from "../../imports/image-9.png";
+import image10 from "../../imports/image-10.png";
+import image11 from "../../imports/image-11.png";
+import image12 from "../../imports/image-12.png";
 
 const products = [
-  { id: 1, name: "ID Card", image: idCardImg },
-  { id: 2, name: "ID Card Font", image: idCardFontImg },
-  { id: 3, name: "Letter", image: letterImg },
-  { id: 4, name: "CD", image: cdImg },
-  { id: 5, name: "Folder", image: folderImg },
-  { id: 6, name: "Business Card", image: businessCardImg },
+  { id: 1, name: "Office Item 1", image: image7 },
+  { id: 2, name: "Office Item 2", image: image8 },
+  { id: 3, name: "Office Item 3", image: image9 },
+  { id: 4, name: "Office Item 4", image: image10 },
+  { id: 5, name: "Office Item 5", image: image11 },
+  { id: 6, name: "Office Item 6", image: image12 },
 ];
 
 export function OfficeMerchandise() {
