@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Sparkles } from "lucide-react";
-import mascotImg from "../../imports/image-13.png";
+import mascotImg from "../../imports/IMG_4267.png";
 
 export function OurMascotSection() {
   return (

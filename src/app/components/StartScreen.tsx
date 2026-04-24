@@ -19,9 +19,9 @@ export function StartScreen() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-12 flex justify-center"
+            className="mb-16 flex justify-center"
           >
-            <img src={logoImg} alt="Paw Studio" className="h-48 w-auto drop-shadow-2xl" />
+            <img src={logoImg} alt="Paw Studio" className="h-72 md:h-96 w-auto drop-shadow-2xl" />
           </motion.div>
 
           <motion.button
