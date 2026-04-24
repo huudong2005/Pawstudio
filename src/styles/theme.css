@@ -136,6 +136,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    cursor: url('/src/imports/Cute_cursor.png'), auto;
+  }
+
+  /* Custom cursor for interactive elements */
+  a, button, input[type="button"], input[type="submit"], [role="button"] {
+    cursor: url('/src/imports/Cute_cursor.png'), pointer;
   }
 
   /**
