@@ -5,6 +5,7 @@ import { DevLogSection } from './DevLogSection';
 import { AboutSection } from './AboutSection';
 import { NewsletterSection } from './NewsletterSection';
 import { Footer } from './Footer';
+import { OurMascotSection } from './OurMascotSection';
 import { OfficeMerchandiseSection } from './OfficeMerchandiseSection';
 import { GiftSetsSection } from './GiftSetsSection';
 
@@ -15,6 +16,7 @@ export function HomePage() {
       <main>
         <HeroSection />
         <GamesCarousel />
+        <OurMascotSection />
         <OfficeMerchandiseSection />
         <GiftSetsSection />
         <DevLogSection />
