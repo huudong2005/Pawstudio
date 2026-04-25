@@ -8,6 +8,7 @@ import { Footer } from './Footer';
 import { OurMascotSection } from './OurMascotSection';
 import { OfficeMerchandiseSection } from './OfficeMerchandiseSection';
 import { GiftSetsSection } from './GiftSetsSection';
+import { MediaPublicationsSection } from './MediaPublicationsSection';
 
 export function HomePage() {
   return (
@@ -19,6 +20,7 @@ export function HomePage() {
         <OurMascotSection />
         <OfficeMerchandiseSection />
         <GiftSetsSection />
+        <MediaPublicationsSection />
         <DevLogSection />
         <AboutSection />
         <NewsletterSection />

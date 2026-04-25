@@ -1,13 +1,68 @@
 import { motion } from "motion/react";
 import { useNavigate } from "react-router";
 import { Sparkles } from "lucide-react";
+import { useState } from "react";
 import logoImg from "../../imports/logo_final.png";
 
 export function StartScreen() {
   const navigate = useNavigate();
+  const [showStars, setShowStars] = useState(false);
+
+  const handleStart = () => {
+    setShowStars(true);
+    setTimeout(() => {
+      navigate("/home");
+    }, 1800);
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#E7A0FF]">
+      {showStars && (
+        <div className="absolute inset-0 z-50 pointer-events-none">
+          {[...Array(12)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              initial={{
+                x: Math.random() * window.innerWidth,
+                y: -50,
+                opacity: 0,
+              }}
+              animate={{
+                x: Math.random() * window.innerWidth + (Math.random() - 0.5) * 400,
+                y: window.innerHeight + 50,
+                opacity: [0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                delay: i * 0.1,
+                ease: "easeInOut",
+              }}
+            >
+              <div className="relative">
+                <motion.div
+                  className="w-2 h-2 rounded-full bg-white"
+                  animate={{
+                    scale: [1, 1.5, 1],
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    repeat: Infinity,
+                  }}
+                />
+                <motion.div
+                  className="absolute top-0 left-0 w-16 h-1 bg-gradient-to-r from-white to-transparent blur-sm"
+                  style={{
+                    transform: "rotate(-45deg)",
+                    transformOrigin: "left center",
+                  }}
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      )}
+
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,8 +85,9 @@ export function StartScreen() {
             transition={{ duration: 0.6, delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate("/home")}
-            className="group relative px-12 py-5 rounded-full bg-[#A8FFEB] text-[#E7A0FF] text-lg shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 transition-all duration-300"
+            onClick={handleStart}
+            disabled={showStars}
+            className="group relative px-12 py-5 rounded-full bg-[#A8FFEB] text-[#E7A0FF] text-lg shadow-lg shadow-white/40 hover:shadow-xl hover:shadow-white/60 transition-all duration-300"
           >
             <span className="flex items-center gap-3">
               <Sparkles className="w-6 h-6" />

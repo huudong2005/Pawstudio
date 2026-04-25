@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import logoImg from '../../imports/logo_final.png';
+import logoImg from '../../imports/LOGO_WEB.png';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,18 +27,12 @@ export function Header() {
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <img
             src={logoImg}
             alt="Paw Studio"
-            className="w-10 h-10 object-contain"
+            className="h-12 w-auto object-contain"
           />
-          <span
-            className="text-2xl tracking-tight"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Paw Studio
-          </span>
         </div>
 
         {/* Navigation Links */}

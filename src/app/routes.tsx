@@ -3,6 +3,7 @@ import { StartScreen } from "./components/StartScreen";
 import { HomePage } from "./components/HomePage";
 import { OfficeMerchandise } from "./components/OfficeMerchandise";
 import { GiftSets } from "./components/GiftSets";
+import { MediaPublications } from "./components/MediaPublications";
 
 export const router = createBrowserRouter([
   {
@@ -20,5 +21,9 @@ export const router = createBrowserRouter([
   {
     path: "/gift-sets",
     element: <GiftSets />,
+  },
+  {
+    path: "/media-publications",
+    element: <MediaPublications />,
   },
 ]);
