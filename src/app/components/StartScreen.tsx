@@ -19,47 +19,91 @@ export function StartScreen() {
     <div className="min-h-screen relative overflow-hidden bg-[#E7A0FF]">
       {showStars && (
         <div className="absolute inset-0 z-50 pointer-events-none">
-          {[...Array(12)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: -50,
-                opacity: 0,
-              }}
-              animate={{
-                x: Math.random() * window.innerWidth + (Math.random() - 0.5) * 400,
-                y: window.innerHeight + 50,
-                opacity: [0, 1, 1, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                delay: i * 0.1,
-                ease: "easeInOut",
-              }}
-            >
-              <div className="relative">
-                <motion.div
-                  className="w-2 h-2 rounded-full bg-white"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    repeat: Infinity,
-                  }}
-                />
-                <motion.div
-                  className="absolute top-0 left-0 w-16 h-1 bg-gradient-to-r from-white to-transparent blur-sm"
-                  style={{
-                    transform: "rotate(-45deg)",
-                    transformOrigin: "left center",
-                  }}
-                />
-              </div>
-            </motion.div>
-          ))}
+          {[...Array(30)].map((_, i) => {
+            const size = 20 + Math.random() * 20;
+            const startX = Math.random() * window.innerWidth;
+            const endX = startX + (Math.random() - 0.5) * 600;
+
+            return (
+              <motion.div
+                key={i}
+                className="absolute"
+                initial={{
+                  x: startX,
+                  y: -100,
+                  opacity: 0,
+                }}
+                animate={{
+                  x: endX,
+                  y: window.innerHeight + 100,
+                  opacity: [0, 1, 1, 0],
+                }}
+                transition={{
+                  duration: 1.5 + Math.random() * 0.5,
+                  delay: i * 0.05,
+                  ease: "easeInOut",
+                }}
+              >
+                <div className="relative">
+                  <motion.div
+                    animate={{
+                      rotate: [0, 360],
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                      rotate: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "linear",
+                      },
+                      scale: {
+                        duration: 0.8,
+                        repeat: Infinity,
+                      },
+                    }}
+                  >
+                    <svg
+                      width={size}
+                      height={size}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 2L14.09 8.26L20 10L14.09 11.74L12 18L9.91 11.74L4 10L9.91 8.26L12 2Z"
+                        fill="url(#starGradient)"
+                        filter="url(#glow)"
+                      />
+                      <defs>
+                        <linearGradient id="starGradient" x1="4" y1="2" x2="20" y2="18">
+                          <stop offset="0%" stopColor="#FFFFFF" />
+                          <stop offset="50%" stopColor="#A8FFEB" />
+                          <stop offset="100%" stopColor="#FFFFFF" />
+                        </linearGradient>
+                        <filter id="glow">
+                          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                          <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </motion.div>
+
+                  <motion.div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-white via-[#A8FFEB] to-transparent blur-md"
+                    style={{
+                      width: `${size * 3}px`,
+                      height: `${size / 3}px`,
+                      transform: "rotate(-45deg) translateX(-50%) translateY(-50%)",
+                      transformOrigin: "center",
+                    }}
+                  />
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       )}
 

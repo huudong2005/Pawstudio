@@ -59,15 +59,35 @@ export function OurMascotSection() {
           className="flex justify-center"
         >
           <div className="relative max-w-4xl w-full">
-            <div className="relative rounded-3xl overflow-hidden backdrop-blur-xl bg-gradient-to-br from-white/80 to-white/40 border border-[#E7A0FF]/20 shadow-2xl shadow-[#E7A0FF]/10 p-8">
+            <motion.div
+              className="relative rounded-3xl overflow-hidden backdrop-blur-xl bg-gradient-to-br from-white/80 to-white/40 border border-[#E7A0FF]/20 shadow-2xl shadow-[#E7A0FF]/10 p-8 cursor-pointer"
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                boxShadow: "0 25px 50px -12px rgba(231, 160, 255, 0.25)",
+              }}
+              transition={{
+                duration: 0.4,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-[#E7A0FF]/5 to-[#A8FFEB]/5"></div>
-              <div className="relative">
+              <motion.div
+                className="relative"
+                whileHover={{
+                  scale: 1.03,
+                }}
+                transition={{
+                  duration: 0.4,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              >
                 <img
                   src={mascotImg}
                   alt="Our Mascot"
                   className="w-full h-auto rounded-2xl"
                 />
-              </div>
+              </motion.div>
               <motion.div
                 className="absolute -top-2 -right-2 w-16 h-16 rounded-full bg-[#A8FFEB]/40 blur-2xl"
                 animate={{
@@ -91,7 +111,7 @@ export function OurMascotSection() {
                   delay: 1.5,
                 }}
               />
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
