@@ -22,7 +22,6 @@ export function StartScreen() {
           {[...Array(30)].map((_, i) => {
             const size = 20 + Math.random() * 20;
             const startX = Math.random() * window.innerWidth;
-            const endX = startX + (Math.random() - 0.5) * 600;
 
             return (
               <motion.div
@@ -34,14 +33,14 @@ export function StartScreen() {
                   opacity: 0,
                 }}
                 animate={{
-                  x: endX,
+                  x: startX,
                   y: window.innerHeight + 100,
                   opacity: [0, 1, 1, 0],
                 }}
                 transition={{
                   duration: 1.5 + Math.random() * 0.5,
                   delay: i * 0.05,
-                  ease: "easeInOut",
+                  ease: "linear",
                 }}
               >
                 <div className="relative">
@@ -92,12 +91,14 @@ export function StartScreen() {
                   </motion.div>
 
                   <motion.div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-white via-[#A8FFEB] to-transparent blur-md"
+                    className="absolute bg-gradient-to-b from-white via-[#A8FFEB] to-transparent blur-md"
                     style={{
-                      width: `${size * 3}px`,
-                      height: `${size / 3}px`,
-                      transform: "rotate(-45deg) translateX(-50%) translateY(-50%)",
-                      transformOrigin: "center",
+                      width: `${size / 3}px`,
+                      height: `${size * 3}px`,
+                      left: "50%",
+                      bottom: `${size * 0.8}px`,
+                      transform: "translateX(-50%)",
+                      transformOrigin: "bottom center",
                     }}
                   />
                 </div>
